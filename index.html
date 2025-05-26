@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Grower</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Animated background particles -->
+    <div class="bg-particles" id="particles"></div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Coding Grower</h1>
+            <p>Your ultimate interactive coding problems and solutions hub</p>
+            <div class="search-container">
+                <input 
+                    type="text" 
+                    class="search-input" 
+                    id="searchInput" 
+                    placeholder="🔍 Search by problem number, name, or tags..."
+                    onkeyup="searchProblems()"
+                >
+                <button class="btn" onclick="clearSearch()">✨ Clear</button>
+            </div>
+        </div>
+
+        <div class="stats-container">
+            <div class="stat-card">
+                <span class="stat-number" id="totalProblems">8</span>
+                <span class="stat-label">Total Problems</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number" id="favoriteCount">0</span>
+                <span class="stat-label">Favorites</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number" id="solvedCount">0</span>
+                <span class="stat-label">Solved</span>
+            </div>
+        </div>
+
+        <div class="controls">
+            <select class="filter-dropdown" id="difficultyFilter" onchange="filterProblems()">
+                <option value="">All Difficulties</option>
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+            
+            <select class="filter-dropdown" id="tagFilter" onchange="filterProblems()">
+                <option value="">All Tags</option>
+                <option value="array">Array</option>
+                <option value="linked-list">Linked List</option>
+                <option value="stack">Stack</option>
+                <option value="tree">Tree</option>
+                <option value="dynamic-programming">Dynamic Programming</option>
+            </select>
+
+            <!-- <div class="view-toggle">
+                <button class="view-btn active" onclick="setView('grid')">Grid</button>
+                <button class="view-btn" onclick="setView('list')">List</button>
+                <button class="view-btn" onclick="setView('compact')">Compact</button>
+            </div> -->
+
+            <button class="btn" onclick="showFavorites()">⭐ Show Favorites</button>
+        </div>
+
+        <div id="resultsCount" class="results-count"></div>
+
+        <div id="problemsContainer" class="problems-grid list-view">
+
+            <!-- Problems will be inserted here -->
+        </div>
+    </div>
+
+    <!-- Floating Add Button
+    <button class="floating-add-btn" onclick="openAddModal()" title="Add New Problem">+</button> -->
+
+    <!-- Modal for adding new problems -->
+    <!-- <div id="problemModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 style="margin-bottom: 30px; color: #1f2937; font-size: 1.8rem;">Add New Problem</h2>
+            <form id="problemForm">
+                <div class="form-group">
+                    <label>Problem Number</label>
+                    <input type="number" id="problemNumber" required>
+                </div>
+                <div class="form-group">
+                    <label>Problem Name</label>
+                    <input type="text" id="problemName" required>
+                </div>
+                <div class="form-group">
+                    <label>Difficulty</label>
+                    <select id="problemDifficulty" required>
+                        <option value="">Select Difficulty</option>
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option> -->
+                        <!-- <option value="hard">Hard</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Tags (comma separated)</label>
+                    <input type="text" id="problemTags" placeholder="array, hash-table, two-pointers">
+                </div>
+                <div class="form-group">
+                    <label>Solution Code</label>
+                    <textarea id="problemSolution" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Explanation</label>
+                    <textarea id="problemExplanation" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Video Link (optional)</label>
+                    <input type="url" id="problemVideo">
+                </div>
+                <button type="submit" class="submit-btn">Add Problem</button>
+            </form>
+        </div>
+    </div> -->
+
+
+<script src="scripts.js"></script>
+</body>
+</html>
