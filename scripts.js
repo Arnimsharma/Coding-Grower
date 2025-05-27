@@ -21,6 +21,17 @@ let problems = [
         favorite: false,
         solved: false
     },
+    {
+        number: 2894,
+        name: "Divisible and Non-divisible Sums Difference",
+        difficulty: "easy",
+        tags: ["Maths"],
+        solution: "class Solution {\npublic:\n    int differenceOfSums(int n, int m) {\n        int k = n/m;\n\n        return n*(n+1)/2 - m * (k * (k+1));\n    }\n};",
+        explanation: "",
+        videoLink: "https://youtu.be/Z-oEFXGseEM?si=CznsETQDMx6k-St4",
+        favorite: false,
+        solved: false
+    },
     // {
     //     number: 2,
     //     name: "Reverse Linked List",
